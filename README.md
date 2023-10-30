@@ -1,1 +1,1 @@
-# cricket_fantasy_game
+In this project, we are going to create a website where users will be able to play a game called “Cricket Fantasy Game”. It is an online game where participants can create their virtual teams composed of real players from the International Cricket Council (ICC). The game allows users to act as a coach, selecting players within a specific credit points limit and making decisions on transferring players before every match.
