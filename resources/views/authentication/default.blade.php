@@ -11,6 +11,7 @@
         
         <link rel="stylesheet" href="{{ asset('auth/css/style.css')}}">
         
+        
     </head>
     <body class="img js-fullheight" style="background-image: url('auth/images/bg.jpg');">
     @yield('template')
