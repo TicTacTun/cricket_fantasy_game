@@ -15,20 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 #login route
 Route::get('/', [authen::class,'login']);
-Route::get('/login',[authen::class,'login']);
+Route::get('/login',[authen::class,'login'])->middleware('islogout');
 Route::post('login-user',[authen::class,'loginUser'])->name('login-user');
 
 #forget Password route
-Route::get("/forget-password",[authen::class,'forgetpass'])->name('forget-password');
+Route::get("/forget-password",[authen::class,'forgetpass'])->name('forget-password')->middleware('islogout');
 Route::post('postforgetpass',[authen::class,'postforgetpass'])->name('postforgetpass');
-Route::get('reset',[authen::class,'reset'])->name('reset');
+Route::get('reset',[authen::class,'reset'])->name('reset')->middleware('islogout');
 Route::post('postreset',[authen::class,'resetnewpass'])->name('post-reset');
 #signup route
-Route::get("/register",[authen::class,'register']);
+Route::get("/register",[authen::class,'register'])->middleware('islogout');
 Route::post("/register-user",[authen::class,'registerUser'])->name('register-user');
 
 #logout route
 Route::get('/logout',[authen::class,'logout']);
 
 #after login route
-Route::get("/dashboard",[authen::class,'dashboard']);
+Route::get("/dashboard",[authen::class,'dashboard'])->middleware('isLoggedIn');
