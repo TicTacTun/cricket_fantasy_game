@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\authen;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\cricketapicontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,6 @@ Route::get('/logout',[authen::class,'logout']);
 
 #after login route
 Route::get("/dashboard",[authen::class,'dashboard'])->middleware('isLoggedIn');
+
+#api route
+Route::get('/points', [cricketapicontroller::class, 'cricinfo']);
