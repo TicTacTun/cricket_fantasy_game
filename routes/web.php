@@ -24,6 +24,7 @@ Route::get("/forget-password",[authen::class,'forgetpass'])->name('forget-passwo
 Route::post('postforgetpass',[authen::class,'postforgetpass'])->name('postforgetpass');
 Route::get('reset',[authen::class,'reset'])->name('reset')->middleware('islogout');
 Route::post('postreset',[authen::class,'resetnewpass'])->name('post-reset');
+
 #signup route
 Route::get("/register",[authen::class,'register'])->middleware('islogout');
 Route::post("/register-user",[authen::class,'registerUser'])->name('register-user');
