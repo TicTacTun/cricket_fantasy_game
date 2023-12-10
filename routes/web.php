@@ -4,6 +4,7 @@ use App\Http\Controllers\authen;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cricketapicontroller;
 use App\Http\Controllers\playerscontroller;
+use App\Http\Controllers\howtoplaycontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,4 +38,9 @@ Route::get("/dashboard",[authen::class,'dashboard'])->middleware('isLoggedIn');
 
 #api route
 Route::get('/points', [cricketapicontroller::class, 'cricinfo']);
-Route::get('/teamcreation', [playerscontroller::class, 'index']);
+
+#Team Creation route
+Route::get('/teamcreation', [playerscontroller::class, 'index'])->middleware('isLoggedIn');
+
+#How to play route
+Route::get('/howtoplay', [howtoplaycontroller::class, 'howto'])->middleware('isLoggedIn');
