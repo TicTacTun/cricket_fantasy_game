@@ -28,7 +28,7 @@
       <div class="tabsShadow"></div>
       <div class="glider"></div>
       <section class="content">
-        <div class="item" id="content-1">
+        <div class="item" id="content-1" style="overflow: scroll;height: 250px;">
           <table>
 
             @foreach($players as $player)
