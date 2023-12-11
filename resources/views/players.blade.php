@@ -40,7 +40,7 @@
             @endforeach 
           </table>
         </div>
-        <div class="item" id="content-2"> 
+        <div class="item" id="content-2" style="overflow: scroll;height: 250px;"> 
           <table>
             @foreach($players as $player)
             @if($player -> role == "Batsman")
@@ -51,7 +51,7 @@
             @endforeach 
           </table>      
         </div>
-        <div class="item" id="content-3"> 
+        <div class="item" id="content-3" style="overflow: scroll;height: 250px;"> 
           <table>
 
             @foreach($players as $player)
@@ -63,7 +63,7 @@
             @endforeach 
           </table>  
         </div>
-        <div class="item" id="content-4">
+        <div class="item" id="content-4"style="overflow: scroll;height: 250px;">
           <table>
 
             @foreach($players as $player)
