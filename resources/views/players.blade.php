@@ -32,19 +32,22 @@
           <table>
 
             @foreach($players as $player)
+            @if($player -> role == "Wicket Keeper")
             <tr>
               <td>{{$player -> name}}</td>
             </tr>
+            @endif
             @endforeach 
           </table>
         </div>
         <div class="item" id="content-2"> 
           <table>
-
             @foreach($players as $player)
+            @if($player -> role == "Batsman")
             <tr>
               <td>{{$player -> name}}</td>
             </tr>
+            @endif
             @endforeach 
           </table>      
         </div>
@@ -52,9 +55,11 @@
           <table>
 
             @foreach($players as $player)
+            @if($player -> role == "All Rounder")
             <tr>
               <td>{{$player -> name}}</td>
             </tr>
+            @endif
             @endforeach 
           </table>  
         </div>
@@ -62,9 +67,11 @@
           <table>
 
             @foreach($players as $player)
+            @if($player -> role == "Bowler")
             <tr>
               <td>{{$player -> name}}</td>
             </tr>
+            @endif
             @endforeach 
           </table>  
         </div>
