@@ -1,7 +1,7 @@
 @component('mail::message')
 Hello {{$user->name}}
 
-<p>Press the button to reset your passsword and get access to the website</p>
+<p>To get again entry change the pass :D</p>
 
 @component('mail::button',['url' => url('reset/')])
 Reset Your Password
