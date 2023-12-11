@@ -28,7 +28,7 @@ class cricketapicontroller extends Controller
         */
 
         // Specify the path to your JSON file
-        $jsonFilePath = 'E:\code\php\cricket_fantasy_game - Copy\public\api.json';
+        $jsonFilePath = 'E:\Cricket Fantasy\rouhg\public\api.json';
 
         // Read the JSON file
         $result = file_get_contents($jsonFilePath);

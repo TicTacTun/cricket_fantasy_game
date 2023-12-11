@@ -28,30 +28,58 @@
       <div class="tabsShadow"></div>
       <div class="glider"></div>
       <section class="content">
-        <div class="item" id="content-1">
-          <h2 class="tab-title tab-primary">All Keepers in this Tournament</h2>
-          <p>
-            <span class = "numit">1)</span>Litton Kumar Crush
-          </p>
+        <div class="item" id="content-1" style="overflow: scroll;height: 250px;">
+          <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "Wicket Keeper")
+            <tr>
+              <td>{{$player -> name}}</td>
+            </tr>
+            @endif
+            @endforeach 
+          </table>
         </div>
-        <div class="item" id="content-2">
-          <h2 class="tab-title tab-success">All Batsmen in this Tournament</h2>
-          <p>
-            <span class = "numit">2)</span>Shanto Bhaia</p>
+        <div class="item" id="content-2" style="overflow: scroll;height: 250px;"> 
+          <table>
+            @foreach($players as $player)
+            @if($player -> role == "Batsman")
+            <tr>
+              <td>{{$player -> name}}</td>
+            </tr>
+            @endif
+            @endforeach 
+          </table>      
         </div>
-        <div class="item" id="content-3">
-          <h2 class="tab-title tab-default">All All-Rounders in this Tournament</h2>
-          <p>
-            <span class = "numit">3)</span>Hageyb Al Hasan</p>
+        <div class="item" id="content-3" style="overflow: scroll;height: 250px;"> 
+          <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "All Rounder")
+            <tr>
+              <td>{{$player -> name}}</td>
+            </tr>
+            @endif
+            @endforeach 
+          </table>  
         </div>
-        <div class="item" id="content-4">
-          <h2 class="tab-title tab-warning">All Bowlers in this Tournament</h2>
-          <p>
-            <span class = "numit">4)</span>Shofirul</p>
+        <div class="item" id="content-4"style="overflow: scroll;height: 250px;">
+          <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "Bowler")
+            <tr>
+              <td>{{$player -> name}}</td>
+            </tr>
+            @endif
+            @endforeach 
+          </table>  
         </div>
       </section>
 
     </div>
+    <a class="link-button" target="/player_table" href="{{url('player_table')}}">Create Your Team</a>
+    
   </div>
 </div>
 </body>

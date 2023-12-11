@@ -4,6 +4,8 @@ use App\Http\Controllers\authen;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cricketapicontroller;
 use App\Http\Controllers\playerscontroller;
+use App\Http\Controllers\howtoplaycontroller;
+use App\Http\Controllers\create_playersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,8 +37,19 @@ Route::get('/logout',[authen::class,'logout']);
 #after login route
 Route::get("/dashboard",[authen::class,'dashboard'])->middleware('isLoggedIn');
 
+
 #api route
 Route::get('/cricinfo', [cricketapicontroller::class, 'cricinfo']);
 Route::get('/playerdetail/{key}', [cricketapicontroller::class, 'playerdetails'])->name('playerdetail');
 
 Route::get('/teamcreation', [playerscontroller::class, 'index']);
+Route::get('/player_table', [create_playersController::class, 'index1'])->middleware('isLoggedIn');
+
+#Team Creation route
+Route::get('/teamcreation', [playerscontroller::class, 'index'])->middleware('isLoggedIn');
+
+#create teams route
+Route::get('/player_table', [create_playersController::class, 'index1'])->middleware('isLoggedIn');
+
+#How to play route
+Route::get('/howtoplay', [howtoplaycontroller::class, 'howto'])->middleware('isLoggedIn');
