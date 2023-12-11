@@ -1,8 +1,13 @@
+<!DOCTYPE html>
+<html>
+
 <head>
     <link href="howtoplaycss/style.css" rel="stylesheet" />
+</head>
 
+<body>
 <h1>
-    How to Play ?<br>
+    <b> How to Play ? </b> <br>
 
 </h1>
 
@@ -10,7 +15,7 @@
     <div class="tab-2">
         <label for="tab2-1">INTRODUCTION</label>
         <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
-        <div >
+        <div style="margin-left: 100px;">
             <p> Follow these 4 easy steps to get started:<br><br>
 
                 <b>Select A Match::</b><br>
@@ -32,48 +37,24 @@
         <input id="tab2-2" name="tabs-two" type="radio">
         <div style="margin-left: -410px;">
             <p>
-            Step 1: Select a Match
+            <b> Step 1: Go to Create Team tab from the Dashboard </b><br>
+                    Go to the desired page and select the match you want to play <br><br>
 
-                    Select any match from the list of upcoming matches and click on the 'Create Team'' button.
+                <b> Step 2: Create your Team </b></br>
+                    Create your team by picking 11 players within a budget. <br>
+                    Select players for your team from all 4 of the categories mentioned below: <br>
+                    WK - Wicket-keepers<br>
+                    BAT - Batters<br>
+                    BWL - Bowlers<br>
+                    AR - All-Rounders<br>
+                    Sort players as per their teams, credits or points.<br><br>
 
-                    Step 2: Create your Team
+                <b> Step 3: Keep eye on gaining points </b><br>
+                    Remember to choose the best players for your dream 11 team. Make sure to sort them with their desired role.<br>
+                    Don't forget to update team before every matches.<br><br>
 
-                    Create your team by picking 11 players within a budget of 100 credits.
-
-                    Select players for your ICC Mens T20 World Cup team from all 4 of the categories mentioned below:
-
-                    WK - Wicket-keepers
-
-                    BAT - Batters
-
-                    BWL - Bowlers
-
-                    AR - All-Rounders
-
-                    Check player info by clicking on the player display image.
-
-                    Sort players as per their teams, credits or points.
-
-                    Keep an eye on:
-
-                    Number of players added to your team
-
-                    Available credits
-
-                    The deadline - Official match start time
-
-                    Step 3: Select your teams Captain & Vice Captain
-
-                    After creating your ICC team, choose a Captain & Vice Captain for the team.
-
-                    Captain - Gets 2x fantasy points scored by him in the actual game
-
-                    Vice Captain - Gets 1.5x fantasy points scored by him in the actual game
-
-                    Step 4: Creating multiple teams
-
-                    You can create up to 20 teams per match and choose to join the contest with 1 or multiple of the teams created!
-    
+                <b> Step 4: Creating multiple teams </b><br>
+                    You can create multiple matches and earn multiple points. Check leaderboard for your position in the contest.<br>
             </p>
         </div>
     </div>
@@ -82,11 +63,8 @@
         <input id="tab2-3" name="tabs-two" type="radio" checked="checked">
         <div style="margin-left: -830px;">
             <p>
-            You can make as many changes to your teams as you like until the deadline of that match!
-
-            You can also change your Captain or Vice Captain before the deadline of the match. Select the "Edit Team" button to make changes to your team.
-
-            Make sure you keep an eye on which of your players are playing the match.
+            Update your team according to the matches <br>
+            Your team will be showed in a table with all the roles you selected
             </p>
         </div>
     </div>
@@ -95,12 +73,22 @@
         <input id="tab2-4" name="tabs-two" type="radio" checked="checked">
         <div style="margin-left: -1250px;">
             <p>
-                Points
+                <b> The points are applied in some crdentials as following: </b> <br>
+                <ul>
+                    <li> Per Run: +1 </li>
+                    <li> Per Fours: +4 </li>
+                    <li> Per Sixes: +6 </li>
+                    <li> Per Wickets: +10 </li>
+                    <li> Per Catches: +2 </li>
+                    <li> Per Maiden: +2 </li>
+                    <li> Century: +10 </li>
+                    <li> Half Century: +5 </li>
+                    <li> Duck: -3</li>
+                </ul>
             </p>
         </div>
     </div>
 </div>
-</head>
 
 
 <footer>
@@ -108,7 +96,7 @@
 <style>
     footer {
     text-align: center;
-    padding-top: 6% 
+    padding-top: 3% 
   }
 .button {
   display: inline-block;
