@@ -60,7 +60,7 @@
                   <a class="nav-link" href="trainer.html"> Fixture </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html"> How to Play </a>
+                  <a class="nav-link" href="howtoplay"> How to Play </a>
                 </li>
               </ul>
             </div>

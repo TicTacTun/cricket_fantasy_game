@@ -28,7 +28,7 @@ class cricketapicontroller extends Controller
         */
 
         // Specify the path to your JSON file
-        $jsonFilePath = 'E:\Cricket Fantasy\rouhg\public\api.json';
+        $jsonFilePath = 'C:\Users\kadir\Documents\laravel\cricket_fantasy_game\public\api.json';
 
         // Read the JSON file
         $result = file_get_contents($jsonFilePath);
