@@ -78,8 +78,6 @@
       </section>
 
     </div>
-    <a class="link-button" target="/player_table" href="{{url('player_table')}}">Create Your Team</a>
-    
   </div>
 </div>
 </body>

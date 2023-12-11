@@ -24,16 +24,34 @@ class authen extends Controller
         ]);
 
         $user = DB::table('users')->where('email', $request->email)->first();
+    
 
         if ($user){
-            if (Hash::check($request->pass, $user->password)){
+            $type = DB::table('users')->where('email', $request->email)->where('user_type', 'user')->select('user_type')->first();
+            
+            if ($type!=null){
+                if ($type->user_type == 'user' ){
+                    if (Hash::check($request->pass, $user->password)){
 
-                $request->session()->put('loginId', $user->id);
-                return redirect('dashboard');
+                        $request->session()->put('loginId', $user->id);
+                        return redirect('dashboard');
 
-            }else{
-                return back()->with('fail','Password not match or do not have any email');
+                    }else{
+                        return back()->with('fail','Password not match or do not have any email');
+                    }
+                }
+            }elseif($type == null){
+                if ($request->pass == $user->password){
+
+                    $request->session()->put('loginId', $user->id);
+                    return redirect('adminDashboard');
+
+                }else{
+                    return back()->with('fail','Password not match or do not have any email');
+                }
+
             }
+            
 
         }else{
             return back()->with('fail','This email not found');
