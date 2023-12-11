@@ -43,18 +43,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item active">
+                  <a class="nav-link" href="{{ url('dashboard')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="teamcreation"> Team Creation </a>
-                </li>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="trainer.html"> Fixture </a>
+                  <a class="nav-link" href="{{ url('cricinfo')}}"> Match Status  </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="howtoplay"> How to Play </a>
+                  <a class="nav-link" href="{{ url('teamcreation')}}"> Team Creation </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=""> Fixture </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=""> How to Play </a>
                 </li>
               </ul>
             </div>

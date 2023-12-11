@@ -8,44 +8,58 @@ use Illuminate\Support\Facades\Http;
 
 class cricketapicontroller extends Controller
 {
-    public function cricInfo()
-    {
-        $APIkey='66df8206820105d49a6716c7b0a45e0e80356bdfdbf1cbb1f995cc02e7ac350a';
-        
+    public function fetchLiveScores(){
+        // Handle API key securely using Laravel configuration or environment variables
+        $APIkey = config('cricket.api_key');
 
+        // Uncomment and adjust cURL code if needed
+        /*
         $curl_options = array(
-        CURLOPT_URL => "https://apiv2.api-cricket.com/?method=get_livescore&APIkey=$APIkey",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HEADER => false,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_CONNECTTIMEOUT => 5
+            CURLOPT_URL => "https://apiv2.api-cricket.com/?method=get_livescore&APIkey=$APIkey",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HEADER => false,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_CONNECTTIMEOUT => 5
         );
 
         $curl = curl_init();
-        curl_setopt_array( $curl, $curl_options );
-        $result = curl_exec( $curl );
+        curl_setopt_array($curl, $curl_options);
+        $result = curl_exec($curl);
+        */
 
-        $result = (array)json_decode($result);
+        // Specify the path to your JSON file
+        $jsonFilePath = 'E:\code\php\cricket_fantasy_game - Copy\public\api.json';
 
-        $teams = array('India','Bangladesh','New Zealand','Australia','South Africa','Pakistan','Afghanistan');
+        // Read the JSON file
+        $result = file_get_contents($jsonFilePath);
+        $result = (array) json_decode($result);
 
-        $result_items_withoutScore = [];
+        $result_all = [];
         foreach ($result['result'] as $item) {
-            $result_items_withoutScore[] = $item;
-        }
-        $score = [];
-        foreach ($result['result'] as $item) {
-            if ( in_array($item->event_home_team, $teams) || in_array($item->event_away_team, $teams) ) {
-                foreach ($item->scorecard as $item1) {
-                    
-                    $score[] = $item1;
-                }
+            if ($item->event_status == 'In Progress') {
+                $result_all[] = $item;
             }
-            
         }
+
+        return $result_all;
+    }
+
+
+
+    public function cricInfo()
+    {
+        $result_all = $this->fetchLiveScores();
+         
+        return view('cricinfo',['result_all' => $result_all]);
         
-        return view('points',['results' => $result_items_withoutScore,'score'=>$score]);
-        
+    }
+
+    public function playerdetails($key){
+
+        $result_all = $this->fetchLiveScores();
+
+        return view('playerdetails',['result_all' => $result_all,'key'=>$key]);
+
     }
 
 }
