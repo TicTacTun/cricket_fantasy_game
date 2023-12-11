@@ -65,84 +65,105 @@
                 <div class="detail-box">
                 <div class="container">
                     <div class="row">
-                        
-                            <div class="col">
-                                
-                                
-                                <table class="table" style="background-color:white;" >
-                                    <thead class="thead-dark">
-                                        <tr>
-                                        <th scope="col">Name </th>
-                                        <th scope="col">Role</th>
-                                        <th scope="col">R</th>
-                                        <th scope="col">B</th>
-                                        <th scope="col">6s</th>
-                                        <th scope="col">4s</th>
-                                        <th scope="col">SR</th>
-                                        <th scope="col">ER</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($result_all as $result)
-                                        @if($result->event_key== $key )
-                                            @foreach ($result->scorecard as $key => $value)
-                                                <tr>
-                                                
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                
-                                                </tr>
-                                            @endforeach
-                                        @endif
-                                    @endforeach    
+                            
+                        <div class="col" style="overflow:auto;height: 1000px;">
+                            
+                            
+                            <table class="table" style="background-color:white;" >
+                                <thead class="thead-dark">
+                                    <tr>
+                                    <th scope="col">Counry</th>
+                                    <th scope="col">Name </th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">R</th>
+                                    <th scope="col">B</th>
+                                    <th scope="col">6s</th>
+                                    <th scope="col">4s</th>
+                                    <th scope="col">O</th>
+                                    <th scope="col">M</th>
+                                    <th scope="col">W</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">SR</th>
+                                    <th scope="col">ER</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($result_all as $result)
+                                    @if($result->event_key== $key )
                                         
-                                    </tbody>
-                                </table>
-                                
-                            </div>
-                            <div class="col">
-                                <table class="table" style="background-color:white;">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                       
+                                        @foreach ($result->scorecard as $key => $value)
+                                            @php 
+                                                $inningsWithout1INN = str_replace(' 1 INN', '', $key);
+                                            @endphp
+                                            @if($result->event_home_team == $inningsWithout1INN )
+                                                @foreach($value as $val)
+                                                    <tr>
+                                                    <td> <img width='30' height ='30' src="{{ $result->event_home_team_logo }}" alt=""></td>
+                                                    <td>{{$val->player}}</td>
+                                                    <td>{{$val->type}}</td>
+                                                    <td>{{$val->R}}</td>
+                                                    <td>{{$val->B}}</td>
+                                                    <td>{{ $val->{'6s'} }}</td>
+                                                    <td>{{ $val->{'4s'} }}</td>
+                                                    <td>{{$val->O}}</td>
+                                                    <td>{{$val->M}}</td>
+                                                    <td>{{$val->W}}</td>
+                                                    <td>{{$val->status}}</td>
+                                                    <td>{{$val->SR}}</td>
+                                                    <td>{{$val->ER}}</td>
+                                                    
+                                                    </tr>
+                                                @endforeach
+                                            @elseif($result->event_away_team == $inningsWithout1INN )
+                                                
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                    <th scope="col">Country</th>
+                                                    <th scope="col">Name </th>
+                                                    <th scope="col">Role</th>
+                                                    <th scope="col">R</th>
+                                                    <th scope="col">B</th>
+                                                    <th scope="col">6s</th>
+                                                    <th scope="col">4s</th>
+                                                    <th scope="col">O</th>
+                                                    <th scope="col">M</th>
+                                                    <th scope="col">W</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">SR</th>
+                                                    <th scope="col">ER</th>
+                                                    </tr>
+                                                </thead>
+                                                @foreach($value as $val)
+                                                    
+                                                    <tr>
+                                                    <td> <img width='30' height ='30' src="{{ $result->event_away_team_logo }}" alt=""></td>
+                                                    <td>{{$val->player}}</td>
+                                                    <td>{{$val->type}}</td>
+                                                    <td>{{$val->R}}</td>
+                                                    <td>{{$val->B}}</td>
+                                                    <td>{{ $val->{'6s'} }}</td>
+                                                    <td>{{ $val->{'4s'} }}</td>
+                                                    <td>{{$val->O}}</td>
+                                                    <td>{{$val->M}}</td>
+                                                    <td>{{$val->W}}</td>
+                                                    <td>{{$val->status}}</td>
+                                                    <td>{{$val->SR}}</td>
+                                                    <td>{{$val->ER}}</td>
+                                                    
+                                                    </tr>
+                                                @endforeach
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                @endforeach    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    
-                    
                 </div>
-              </div>
+                
+              
             </div>
             
           </div>
@@ -153,7 +174,17 @@
   </div>
 
 
+    <section class="us_section layout_padding">
+        <div class="container">
+        
 
+        <div class="us_container ">
+            <div class="row">
+            
+            </div>
+        </div>
+        </div>
+    </section>
   <!-- end us section -->
 
   <!-- footer section -->

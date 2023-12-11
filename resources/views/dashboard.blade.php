@@ -53,7 +53,7 @@
                   <a class="nav-link" href="{{ url('teamcreation')}}"> Team Creation </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href=""> Fixture </a>
+                  <a class="nav-link" href="{{ url('fixture')}}"> Fixture </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="howtoplay"> How to Play </a>
