@@ -55,4 +55,6 @@ Route::get('/player_table', [create_playersController::class, 'index1'])->middle
 Route::get('/howtoplay', [howtoplaycontroller::class, 'howto'])->middleware('isLoggedIn');
 
 #admin route
-Route::get('/adminDashboard',[admin::class,'loginAdmin'])->middleware('isLoggedIn');
+Route::get('/adminDashboard',[admin::class,'loginAdmin'])->name('adminDashboard')->middleware('isLoggedIn');
+Route::post('delete_user_admin/{id}',[admin::class,'delete_user'])->name('delete_user_admin');
+Route::post('/update_user',[admin::class,'update_user'])->name('update_user');
