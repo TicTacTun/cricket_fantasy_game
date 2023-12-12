@@ -24,10 +24,10 @@
 					</li>
 				
 					<li>
-                        <a  href="{{ url('adminDashboard')}}"><i class="fa fa-qrcode fa-3x"></i> User</a>
+                        <a  class="active-menu"  href="{{ url('adminDashboard')}}"><i class="fa fa-qrcode fa-3x"></i> User</a>
                     </li>
                     <li>
-                        <a class=""  href=""><i class="fa fa-dashboard fa-3x"></i> Points Update</a>
+                        <a href="{{ url('adminpoints')}}"><i class="fa fa-dashboard fa-3x"></i> Points Update</a>
                     </li>
                      <li>
                         <a  href="logout"><i class="fa fa-desktop fa-3x"></i> Logout</a>

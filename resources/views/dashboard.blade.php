@@ -58,9 +58,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="howtoplay"> How to Play </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="points"> Points </a>
-                </li>
               </ul>
             </div>
           </div>

@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\Http;
 class cricketapicontroller extends Controller
 {
     public function fetchLiveScores(){
-        // Handle API key securely using Laravel configuration or environment variables
-        $APIkey = config('cricket.api_key');
+        
+        $APIkey = '05ad036247c32261443de00f69d928698bcd1e521eb31afa51aa52238ccffc23';
 
-        // Uncomment and adjust cURL code if needed
-        /*
+        
         $curl_options = array(
             CURLOPT_URL => "https://apiv2.api-cricket.com/?method=get_livescore&APIkey=$APIkey",
             CURLOPT_RETURNTRANSFER => true,
@@ -25,13 +24,7 @@ class cricketapicontroller extends Controller
         $curl = curl_init();
         curl_setopt_array($curl, $curl_options);
         $result = curl_exec($curl);
-        */
-
-        // Specify the path to your JSON file
-        $jsonFilePath = 'E:\code\php\cricket_fantasy_game - Copy\public\api.json';
-
-        // Read the JSON file
-        $result = file_get_contents($jsonFilePath);
+        
         $result = (array) json_decode($result);
 
         $result_all = [];
@@ -43,9 +36,6 @@ class cricketapicontroller extends Controller
 
         return $result_all;
     }
-
-
-
     public function cricInfo()
     {
         $result_all = $this->fetchLiveScores();

@@ -86,7 +86,7 @@
                       <li> 
                       <a href=" {{ route('playerdetail',['key'=>$result->event_key])}} ">
                         
-                        {{ $result->event_home_team }} VS {{ $result->event_away_team }}
+                        ({{ $result->event_home_team }} VS {{ $result->event_away_team }} Time: {{ $result->event_time }})
                       </a>
                           
                       </li>
@@ -139,7 +139,7 @@
                 <div class="rca-mini-widget rca-top-border rca-tab-simple">
                   <ul class="rca-tab-list">
                     <li class="rca-tab-link active" data-tab="ltab-1" onclick="showTab(this);">Live</li>
-                    <li class="rca-tab-link" data-tab="ltab-2" onclick="showTab(this);">Results</li>
+                    
                   </ul>
                     
                     
@@ -210,24 +210,16 @@
                                         <div class="rca-match-schedule">
                                         @foreach($value as $val)
                                           @if($loop->last)
-                                          
+                                            @if($val->post!=null)
                                             <p>Comments: Bowling {{ $val->post}}</p>
+                                            @endif
                                           @endif
                                         @endforeach
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="rca-top-padding rca-score-status">
-                                <div class="rca-status-scroll">
-                                    FOUR!!! from Dhoni
-                                </div>
-                                <ul class="rca-bullet-list">
-                                    <li class="active" data-tab="#status1"></li>
-                                    <li data-tab="#status2"></li>
-                                    <li data-tab="#status3"></li>
-                                </ul>
-                            </div>
+                            
                         </div>
                     @endforeach
                 </div>
@@ -237,18 +229,7 @@
                     
                   
                   <!----- Result ------------------->
-                  <div id="ltab-2" class="rca-padding rca-tab-content">
-                    <div class="rca-match-detail rca-padding">
-                      <h3 class="rca-match-title">
-                        <a href="/widgets.html">BAN vs ZIM</a>
-                        <span class="rca-match-info rca-right">
-                          2nd T20 Match
-                        </span>
-                      </h3>
-                      <p class="rca-duration">Bangaladesh Won by 20 runs</p>
-                      <p class="rca-match-schedule">Sun, 31 Jan 2:10 pm IST</p>
-                    </div>
-                  </div>
+                  
                 </div> 
               </div>
             </div>
