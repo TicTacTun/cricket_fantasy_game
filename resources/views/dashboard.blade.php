@@ -56,6 +56,9 @@
                   <a class="nav-link" href="{{ url('fixture')}}"> Fixture </a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="points"> Squad </a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="howtoplay"> How to Play </a>
                 </li>
               </ul>

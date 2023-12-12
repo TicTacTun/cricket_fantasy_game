@@ -10,8 +10,4 @@ class points extends Controller
     {
         return view('points');
     }
-
-    public function pointfetch(){
-        
-    }
 }
