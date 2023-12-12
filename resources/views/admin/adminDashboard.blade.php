@@ -23,9 +23,8 @@
                     <img src="{{ asset('admin/img/cricket.png') }}" class="user-image img-responsive"/>
 					</li>
 				
-					
-                    <li>
-                        <a class="active-menu"  href="{{ url('adminDashboard')}}"><i class="fa fa-address-card "></i> User</a>
+					<li>
+                        <a  href="{{ url('adminDashboard')}}"><i class="fa fa-qrcode fa-3x"></i> User</a>
                     </li>
                     <li>
                         <a class=""  href=""><i class="fa fa-dashboard fa-3x"></i> Points Update</a>
@@ -93,7 +92,7 @@
                                 <div class="form-row">
                                     <div class="form-group">
                                     <label for="inputAddress">Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Name" name='name' style='width:300px;'>
+                                    <input type="text" class="form-control" id="name" placeholder="Name" name='name' style='width:570px;'>
                                     </div>
                                     <div class="form-group col-md-6">
                                     
