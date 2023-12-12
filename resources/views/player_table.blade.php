@@ -56,6 +56,36 @@
             @endforeach 
         </table>
         </td>
+        <td>
+        <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "Wicket Keeper")
+            <tr>
+            <td>
+              <button class="button" style="background-color: green; color: white; padding: 0.005px 1px; font-size: 10px;">ADD</button>
+            </td>
+
+            </tr>
+            @endif
+            @endforeach 
+        </table>
+        </td>
+        <td>
+        <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "Wicket Keeper")
+            <tr>
+            <td>
+              <button class="button" style="background-color: green; color: white; padding: 0.005px 1px; font-size: 10px;">REMOVE</button>
+            </td>
+
+            </tr>
+            @endif
+            @endforeach 
+        </table>
+        </td>
         <td></td>
         <td></td>
       </tr>
@@ -95,6 +125,36 @@
             @endforeach 
         </table>
         </td>
+        <td>
+        <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "Batsman")
+            <tr>
+            <td>
+              <button class="button" style="background-color: green; color: white; padding: 0.005px 1px; font-size: 10px;">ADD</button>
+            </td>
+
+            </tr>
+            @endif
+            @endforeach 
+        </table>
+        </td>
+        <td>
+        <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "Batsman")
+            <tr>
+            <td>
+              <button class="button" style="background-color: green; color: white; padding: 0.005px 1px; font-size: 10px;">REMOVE</button>
+            </td>
+
+            </tr>
+            @endif
+            @endforeach 
+        </table>
+        </td>
         <td></td>
         <td></td>
       </tr>
@@ -134,6 +194,37 @@
             @endforeach 
         </table>
         </td>
+        <td>
+        <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "All Rounder")
+            <tr>
+            <td>
+              <button class="button" style="background-color: green; color: white; padding: 0.005px 1px; font-size: 10px;">ADD</button>
+            </td>
+
+            </tr>
+            @endif
+            @endforeach 
+        </table>
+        </td>
+        <td>
+        <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "All Rounder")
+            <tr>
+            <td>
+              <button class="button" style="background-color: green; color: white; padding: 0.005px 1px; font-size: 10px;">REMOVE</button>
+            </td>
+
+            </tr>
+            @endif
+            @endforeach 
+        </table>
+        </td>
+        
         <td></td>
         <td></td>
       </tr>
@@ -168,6 +259,36 @@
             @if($player -> role == "Bowler")
             <tr>
             <td>{{$player -> role}}</td>
+            </tr>
+            @endif
+            @endforeach 
+        </table>
+        </td>
+        <td>
+        <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "Bowler")
+            <tr>
+            <td>
+              <button class="button" style="background-color: green; color: white; padding: 0.005px 1px; font-size: 10px;">ADD</button>
+            </td>
+
+            </tr>
+            @endif
+            @endforeach 
+        </table>
+        </td>
+        <td>
+        <table>
+
+            @foreach($players as $player)
+            @if($player -> role == "Bowler")
+            <tr>
+            <td>
+              <button class="button" style="background-color: green; color: white; padding: 0.005px 1px; font-size: 10px;">REMOVE</button>
+            </td>
+
             </tr>
             @endif
             @endforeach 
