@@ -78,11 +78,28 @@
       </section>
 
     </div>
-    <a class="link-button" target="/player_table" href="{{url('player_table')}}">Create Your Team</a>
-    
+    <a target="/player_table" href="{{url('player_table')}}">
+      <button 
+        style="
+        background-color: black;
+        color: white;
+        border-radius: 8px;
+        height: 50px;
+        width: 200px;
+        font-size: 18px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sam-serif;
+        
+        "
+      >
+        Create Your Team
+      </button>
+      </a>
+    </div>
   </div>
 </div>
+
 </body>
+
 
 
 </html>

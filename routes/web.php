@@ -7,6 +7,7 @@ use App\Http\Controllers\playerscontroller;
 use App\Http\Controllers\howtoplaycontroller;
 use App\Http\Controllers\create_playersController;
 use App\Http\Controllers\admin;
+use App\Http\Controllers\points;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,3 +59,6 @@ Route::get('/howtoplay', [howtoplaycontroller::class, 'howto'])->middleware('isL
 Route::get('/adminDashboard',[admin::class,'loginAdmin'])->name('adminDashboard')->middleware('isLoggedIn');
 Route::post('delete_user_admin/{id}',[admin::class,'delete_user'])->name('delete_user_admin');
 Route::post('/update_user',[admin::class,'update_user'])->name('update_user');
+
+#point page route
+Route::get('/points', [points::class, 'points'])->middleware('isLoggedIn');
